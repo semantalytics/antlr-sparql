@@ -62,6 +62,14 @@ LIMIT
     : ('L'|'l')('I'|'i')('M'|'m')('I'|'i')('T'|'t')
     ;
 
+ASC
+    : ('A'|'a')('S'|'s')('C'|'c')
+    ;
+
+DESC
+    : ('D'|'d')('E'|'e')('S'|'s')('C'|'c')
+    ;
+
 NAMED
     : ('N'|'n')('A'|'a')('M'|'m')('E'|'e')('D'|'d')
     ;
@@ -283,7 +291,7 @@ IRI_REF
 
 /* SPARQL 1.0 [71] */
 PNAME_NS
-    : p=PN_PREFIX? ':'
+    : PN_PREFIX? ':'
     ;
 
 /* SPARQL 1.0 [72] */
@@ -293,17 +301,17 @@ PNAME_LN
 
 /* SPARQL 1.0 [73] */
 BLANK_NODE_LABEL
-    : '_:' t=PN_LOCAL
+    : '_:' PN_LOCAL
     ;
 
 /* SPARQL 1.0 [74] */
 VAR1
-    : '?' v=VARNAME
+    : '?' VARNAME
     ;
 
 /* SPARQL 1.0 [75] */
 VAR2
-    : '$' v=VARNAME
+    : '$' VARNAME
     ;
 
 /* SPARQL 1.0 [76] */
@@ -331,33 +339,33 @@ DOUBLE
 
 /* SPARQL 1.0 [80] */
 INTEGER_POSITIVE
-    : '+' n=INTEGER
+    : '+' INTEGER
     ;
 
 
 /* SPARQL 1.0 [81] */
 DECIMAL_POSITIVE
-    : '+' n=DECIMAL
+    : '+' DECIMAL
     ;
 
 /* SPARQL 1.0 [82] */
 DOUBLE_POSITIVE
-    : '+' n=DOUBLE
+    : '+' DOUBLE
     ;
 
 /* SPARQL 1.0 [83] */
 INTEGER_NEGATIVE
-    : '-' n=INTEGER
+    : '-' INTEGER
     ;
 
 /* SPARQL 1.0 [84] */
 DECIMAL_NEGATIVE
-    : '-' n=DECIMAL
+    : '-' DECIMAL
     ;
 
 /* SPARQL 1.0 [85] */
 DOUBLE_NEGATIVE
-    : '-' n=DOUBLE
+    : '-' DOUBLE
     ;
 
 /* SPARQL 1.0 [86] */

@@ -1,5 +1,7 @@
 parser grammar Sparql10Parser;
 
+options { tokenVocab=Sparql10Lexer; }
+
 /* SPARQL 1.0 [1] */
 query
     : prologue ( selectQuery | constructQuery | describeQuery | askQuery )
