@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="275" failures="0" name="com.semantaltyics.antlr.sparql.sparql10.TestQuery" time="0.629" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/home/zcwhitl/opt/graalvm-ce-1.0.0-rc7/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.71-b01-internal-jvmci-0.48"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.name" value="GraalVM 1.0.0-rc7"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/home/zcwhitl/git/antlr-sparql/sparql10"/>
+    <property name="java.runtime.version" value="1.8.0_172-20180625212755.graaluser.jdk8u-src-tar-g-b11"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="basedir" value="/home/zcwhitl/git/antlr-sparql/sparql10"/>
+    <property name="java.endorsed.dirs" value="/home/zcwhitl/opt/graalvm-ce-1.0.0-rc7/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="surefire.real.class.path" value="/home/zcwhitl/git/antlr-sparql/sparql10/target/surefire/surefirebooter8516227414737864456.jar"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="surefire.test.class.path" value="/home/zcwhitl/git/antlr-sparql/sparql10/target/test-classes:/home/zcwhitl/git/antlr-sparql/sparql10/target/classes:/home/zcwhitl/.m2/repository/org/antlr/antlr4-runtime/4.7/antlr4-runtime-4.7.jar:/home/zcwhitl/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/zcwhitl/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/zcwhitl/.m2/repository/com/google/guava/guava/18.0/guava-18.0.jar:"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="3.10.0-957.1.3.el7.x86_64"/>
+    <property name="user.home" value="/home/zcwhitl"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="user.name" value="zcwhitl"/>
+    <property name="java.class.path" value="/home/zcwhitl/git/antlr-sparql/sparql10/target/test-classes:/home/zcwhitl/git/antlr-sparql/sparql10/target/classes:/home/zcwhitl/.m2/repository/org/antlr/antlr4-runtime/4.7/antlr4-runtime-4.7.jar:/home/zcwhitl/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/zcwhitl/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/zcwhitl/.m2/repository/com/google/guava/guava/18.0/guava-18.0.jar:"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/home/zcwhitl/opt/graalvm-ce-1.0.0-rc7/jre"/>
+    <property name="sun.java.command" value="/home/zcwhitl/git/antlr-sparql/sparql10/target/surefire/surefirebooter8516227414737864456.jar /home/zcwhitl/git/antlr-sparql/sparql10/target/surefire/surefire4272859356359938683tmp /home/zcwhitl/git/antlr-sparql/sparql10/target/surefire/surefire1452448001882182278tmp"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_172"/>
+    <property name="java.ext.dirs" value="/home/zcwhitl/opt/graalvm-ce-1.0.0-rc7/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="sun.boot.class.path" value="/home/zcwhitl/opt/graalvm-ce-1.0.0-rc7/jre/lib/resources.jar:/home/zcwhitl/opt/graalvm-ce-1.0.0-rc7/jre/lib/rt.jar:/home/zcwhitl/opt/graalvm-ce-1.0.0-rc7/jre/lib/sunrsasign.jar:/home/zcwhitl/opt/graalvm-ce-1.0.0-rc7/jre/lib/jsse.jar:/home/zcwhitl/opt/graalvm-ce-1.0.0-rc7/jre/lib/jce.jar:/home/zcwhitl/opt/graalvm-ce-1.0.0-rc7/jre/lib/charsets.jar:/home/zcwhitl/opt/graalvm-ce-1.0.0-rc7/jre/lib/jfr.jar:/home/zcwhitl/opt/graalvm-ce-1.0.0-rc7/jre/lib/jvmci-services.jar:/home/zcwhitl/opt/graalvm-ce-1.0.0-rc7/jre/classes:/home/zcwhitl/opt/graalvm-ce-1.0.0-rc7/jre/lib/boot/graal-sdk.jar:/home/zcwhitl/opt/graalvm-ce-1.0.0-rc7/jre/lib/boot/graal-sdk.src.zip:/home/zcwhitl/opt/graalvm-ce-1.0.0-rc7/jre/lib/boot/graaljs-scriptengine.jar"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="localRepository" value="/home/zcwhitl/.m2/repository"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="jvmci.Compiler" value="graal"/>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[0]" time="0.127"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[1]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[2]" time="0.003"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[3]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[4]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[5]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[6]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[7]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[8]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[9]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[10]" time="0.003"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[11]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[12]" time="0.003"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[13]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[14]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[15]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[16]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[17]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[18]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[19]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[20]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[21]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[22]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[23]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[24]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[25]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[26]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[27]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[28]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[29]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[30]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[31]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[32]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[33]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[34]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[35]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[36]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[37]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[38]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[39]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[40]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[41]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[42]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[43]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[44]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[45]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[46]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[47]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[48]" time="0.003"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[49]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[50]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[51]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[52]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[53]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[54]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[55]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[56]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[57]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[58]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[59]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[60]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[61]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[62]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[63]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[64]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[65]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[66]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[67]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[68]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[69]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[70]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[71]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[72]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[73]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[74]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[75]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[76]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[77]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[78]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[79]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[80]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[81]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[82]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[83]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[84]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[85]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[86]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[87]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[88]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[89]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[90]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[91]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[92]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[93]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[94]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[95]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[96]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[97]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[98]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[99]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[100]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[101]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[102]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[103]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[104]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[105]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[106]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[107]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[108]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[109]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[110]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[111]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[112]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[113]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[114]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[115]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[116]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[117]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[118]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[119]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[120]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[121]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[122]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[123]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[124]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[125]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[126]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[127]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[128]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[129]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[130]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[131]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[132]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[133]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[134]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[135]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[136]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[137]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[138]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[139]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[140]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[141]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[142]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[143]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[144]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[145]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[146]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[147]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[148]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[149]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[150]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[151]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[152]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[153]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[154]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[155]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[156]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[157]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[158]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[159]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[160]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[161]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[162]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[163]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[164]" time="0.003"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[165]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[166]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[167]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[168]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[169]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[170]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[171]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[172]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[173]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[174]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[175]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[176]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[177]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[178]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[179]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[180]" time="0.003"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[181]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[182]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[183]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[184]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[185]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[186]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[187]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[188]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[189]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[190]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[191]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[192]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[193]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[194]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[195]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[196]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[197]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[198]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[199]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[200]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[201]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[202]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[203]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[204]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[205]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[206]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[207]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[208]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[209]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[210]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[211]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[212]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[213]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[214]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[215]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[216]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[217]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[218]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[219]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[220]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[221]" time="0.034"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[222]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[223]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[224]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[225]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[226]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[227]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[228]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[229]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[230]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[231]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[232]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[233]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[234]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[235]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[236]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[237]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[238]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[239]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[240]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[241]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[242]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[243]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[244]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[245]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[246]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[247]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[248]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[249]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[250]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[251]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[252]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[253]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[254]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[255]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[256]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[257]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[258]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[259]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[260]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[261]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[262]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[263]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[264]" time="0.002"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[265]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[266]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[267]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[268]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[269]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[270]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[271]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[272]" time="0.001"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[273]" time="0"/>
+  <testcase classname="com.semantaltyics.antlr.sparql.sparql10.TestQuery" name="CanParse[274]" time="0.001"/>
+</testsuite>

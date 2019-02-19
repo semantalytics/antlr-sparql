@@ -163,7 +163,7 @@ ISBLANK
 
 
 COMMENT
-    : '#' .* EOL { skip(); }
+    : '#' .*? EOL -> channel(HIDDEN)
     ;
 
 ASTERISK
@@ -253,6 +253,10 @@ OR
     : '||'
     ;
 
+REFERENCE
+    : '^^'
+    ;
+
 /* fragments */
 
 fragment
@@ -280,14 +284,10 @@ EOL2
     : '\r'
     ;
 
-/* Terminals */
-
 /* SPARQL 1.0 [70] */
 IRI_REF
-    : '<' ( ~( '<' | '>' | '"' | '{' | '}' | '|' | '^' | '\\' | '`' | '\u0000'..'\u0020') )* '>'
+    : '<' ( ~( '<' | '>' | '"' | '{' | '}' | '|' | '^' | '\\' | '`' | '\u0000'..'\u0020') )*? '>'
     ;
-
-    //TODO not quite sure if this is correct. there's a dash in the ebnf
 
 /* SPARQL 1.0 [71] */
 PNAME_NS
@@ -316,7 +316,7 @@ VAR2
 
 /* SPARQL 1.0 [76] */
 LANGTAG
-    : '@' (('a'..'z' | 'A'..'Z'))+ ('-' (('a'..'z' | 'A'..'Z')('0'..'9'))+)*
+    : '@' (('a'..'z' | 'A'..'Z'))+ ('-' (('a'..'z' | 'A'..'Z')('0'..'9'))+)*?
     ;
 
 /* SPARQL 1.0 [77] */
@@ -375,22 +375,22 @@ EXPONENT
 
 /* SPARQL 1.0 [87] */
 STRING_LITERAL1
-    : '\'' ( ~('\u0027' | '\u005C' | '\u000A' | '\u000D') | ECHAR )* '\''
+    : '\'' ( ~('\u0027' | '\u005C' | '\u000A' | '\u000D') | ECHAR )*? '\''
     ;
 
 /* SPARQL 1.0 [88] */
 STRING_LITERAL2
-    : '"'  ( ~('\u0022' | '\u005C' | '\u000A' | '\u000D') | ECHAR )* '"'
+    : '"'  ( ~('\u0022' | '\u005C' | '\u000A' | '\u000D') | ECHAR )*? '"'
     ;
 
 /* SPARQL 1.0 [89] */
 STRING_LITERAL_LONG1
-    :   '\'\'\'' ( ( '\'' | '\'\'' )? ( ~( '\'' | '\\' ) | ECHAR ) )* '\'\'\''
+    :   '\'\'\'' ( ( '\'' | '\'\'' )? ( ~( '\'' | '\\' ) | ECHAR ) )*? '\'\'\''
     ;
 
 /* SPARQL 1.0 [90] */
 STRING_LITERAL_LONG2
-    : '"""' ( ( '"' | '""' )? ( ~( '"' | '\\' ) | ECHAR ) )* '"""'
+    : '"""' ( ( '"' | '""' )? ( ~( '"' | '\\' ) | ECHAR ) )*? '"""'
     ;
 
 /* SPARQL 1.0 [91] */
@@ -400,18 +400,18 @@ ECHAR
 
 /* SPARQL 1.0 [92] */
 NIL
-    : '(' WS* ')'
+    : '(' WS*? ')'
     ;
 
 /* SPARQL 1.0 [93] */
 WS
-    : (' ' | TAB | EOL) { skip(); }
+    : (' ' | TAB | EOL) -> channel(HIDDEN)
     ;
 
 
 /* SPARQL 1.0 [94] */
 ANON
-    : '[' WS* ']'
+    : '[' WS*? ']'
     ;
 
 /* SPARQL 1.0 [95] */

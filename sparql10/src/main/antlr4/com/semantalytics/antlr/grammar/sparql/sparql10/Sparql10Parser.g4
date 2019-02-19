@@ -396,7 +396,7 @@ string
 
 /* SPARQL 1.0 [67] */
 iriRef
-    : IRIREF
+    : IRI_REF
     | prefixedName
     ;
 
