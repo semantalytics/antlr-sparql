@@ -7,7 +7,7 @@
 
     <groupId>com.semantalytics.antlr4</groupId>
     <artifactId>sparql</artifactId>
-    <name>Antlr4 SPARQL Grammar</name>
+    <name>Antlr4 SPARQL parent</name>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -97,22 +97,15 @@
                 </plugin>
 
                 <plugin>
-                    <groupId>org.antlr</groupId>
-                    <artifactId>antlr4-maven-plugin</artifactId>
-                    <version>4.7.2</version>
-                    <executions>
-                        <execution>
-                            <id>antlr</id>
-                            <goals>
-                                <goal>antlr4</goal>
-                            </goals>
-                        </execution>
-                    </executions>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-remote-resources-plugin</artifactId>
+                    <version>1.6.0</version>
                 </plugin>
 
             </plugins>
         </pluginManagement>
     </build>
+
 
     <dependencyManagement>
         <dependencies>
@@ -131,13 +124,12 @@
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-bom</artifactId>
                 <version>2.11.1</version>
-                <scope>import</scope>
                 <type>pom</type>
             </dependency>
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>21.0</version>
+                <version>18.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
