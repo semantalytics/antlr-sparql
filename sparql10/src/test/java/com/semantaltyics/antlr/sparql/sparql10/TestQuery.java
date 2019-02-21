@@ -1,9 +1,8 @@
 package com.semantaltyics.antlr.sparql.sparql10;
 
 import com.google.common.io.Resources;
-import com.semantalytics.antlr.grammar.sparql.sparql10.Sparql10Lexer;
-import com.semantalytics.antlr.grammar.sparql.sparql10.Sparql10Parser;
-import org.antlr.v4.runtime.ANTLRInputStream;
+import com.semantalytics.antlr.sparql.sparql10.Sparql10Lexer;
+import com.semantalytics.antlr.sparql.sparql10.Sparql10Parser;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -13,7 +12,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;

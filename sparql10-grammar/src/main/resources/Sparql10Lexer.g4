@@ -161,102 +161,6 @@ ISBLANK
     : ('I'|'i')('S'|'s')('B'|'b')('L'|'l')('A'|'a')('N'|'n')('K'|'k')
     ;
 
-
-COMMENT
-    : '#' .*? EOL -> channel(HIDDEN)
-    ;
-
-ASTERISK
-    : '*'
-    ;
-
-DOT
-    : '.'
-    ;
-
-OPEN_CURLY_BRACE
-	: '{'
-	;
-
-CLOSE_CURLY_BRACE
-	: '}'
-	;
-
-SEMICOLON
-    : ';'
-    ;
-
-COMMA
-    : ','
-    ;
-
-OPEN_BRACE
-    : '('
-    ;
-
-CLOSE_BRACE
-    : ')'
-    ;
-
-OPEN_SQUARE_BRACE
-    : '['
-    ;
-
-CLOSE_SQUARE_BRACE
-    : ']'
-    ;
-
-LESS_EQUAL
-    : '<='
-    ;
-
-GREATER_EQUAL
-    : '>='
-    ;
-
-NOT_EQUAL
-    : '!='
-    ;
-
-NOT_SIGN
-    : '!'
-    ;
-DIVIDE
-    : '/'
-    ;
-
-EQUAL
-    : '='
-    ;
-
-LESS
-	: '<'
-	;
-
-GREATER
-	: '>'
-	;
-
-PLUS
-    : '+'
-    ;
-
-MINUS
-    : '-'
-    ;
-
-AND
-    : '&&'
-    ;
-
-OR
-    : '||'
-    ;
-
-REFERENCE
-    : '^^'
-    ;
-
 /* fragments */
 
 fragment
@@ -459,4 +363,99 @@ PN_PREFIX
 /* SPARQL 1.0 [100] */
 PN_LOCAL
     : ( PN_CHARS_U | ('0'..'9') ) (( PN_CHARS | DOT)* PN_CHARS)?
+    ;
+
+COMMENT
+    : '#' .*? EOL -> channel(HIDDEN)
+    ;
+
+ASTERISK
+    : '*'
+    ;
+
+DOT
+    : '.'
+    ;
+
+OPEN_CURLY_BRACE
+	: '{'
+	;
+
+CLOSE_CURLY_BRACE
+	: '}'
+	;
+
+SEMICOLON
+    : ';'
+    ;
+
+COMMA
+    : ','
+    ;
+
+OPEN_BRACE
+    : '('
+    ;
+
+CLOSE_BRACE
+    : ')'
+    ;
+
+OPEN_SQUARE_BRACE
+    : '['
+    ;
+
+CLOSE_SQUARE_BRACE
+    : ']'
+    ;
+
+LESS_EQUAL
+    : '<='
+    ;
+
+GREATER_EQUAL
+    : '>='
+    ;
+
+NOT_EQUAL
+    : '!='
+    ;
+
+NOT_SIGN
+    : '!'
+    ;
+DIVIDE
+    : '/'
+    ;
+
+EQUAL
+    : '='
+    ;
+
+LESS
+	: '<'
+	;
+
+GREATER
+	: '>'
+	;
+
+PLUS
+    : '+'
+    ;
+
+MINUS
+    : '-'
+    ;
+
+AND
+    : '&&'
+    ;
+
+OR
+    : '||'
+    ;
+
+REFERENCE
+    : '^^'
     ;
