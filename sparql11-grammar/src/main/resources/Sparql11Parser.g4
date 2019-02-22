@@ -42,8 +42,9 @@ subSelect
 
 /* SPARQL 1.1 [9] */
   	// SelectClause	  ::=  	'SELECT' ( 'DISTINCT' | 'REDUCED' )? ( ( Var | ( OPEN_BRACE Expression 'AS' Var CLOSE_BRACE ) )+ | '*' )
-selectClause :
-    SELECT ( DISTINCT | REDUCED )? ( (var | ( OPEN_BRACE expression AS var CLOSE_BRACE ) )+ | STAR )
+selectClause
+    : SELECT ( DISTINCT | REDUCED )? ( (var | ( OPEN_BRACE expression AS var CLOSE_BRACE ) )+ | STAR )
+    ;
 
 /* SPARQL 1.1 [10] */
  	//ConstructQuery	  ::=  	'CONSTRUCT' ( ConstructTemplate DatasetClause* WhereClause SolutionModifier | DatasetClause* 'WHERE' OPEN_CURLY_BRACE TriplesTemplate? CLOSE_CURLY_BRACE SolutionModifier )
@@ -67,7 +68,7 @@ askQuery
 /* SPARQL 1.1 [13] */
  	// DatasetClause	  ::=  	'FROM' ( DefaultGraphClause | NamedGraphClause )
 datasetClause
-    : FROM ( defaultGraphClasue | namedGraphClause )
+    : FROM ( defaultGraphClause | namedGraphClause )
     ;
 
 /* SPARQL 1.1 [14] */
@@ -97,7 +98,7 @@ whereClause
 /* SPARQL 1.1 [18] */
  	// SolutionModifier	  ::=  	GroupClause? HavingClause? OrderClause? LimitOffsetClauses?
 solutionModifier
-    : groupClause? havingClause? orderClause? limitOffsetaClauses?
+    : groupClause? havingClause? orderClause? limitOffsetClauses?
     ;
 
 /* SPARQL 1.1 [19] */
@@ -168,7 +169,7 @@ values
 /* SPARQL 1.1 [29] */
   	//Update	  ::=  	Prologue ( Update1 ( ';' Update )? )?
 update
-    : prologue ( update1 ( ';' update )? )?
+    : prologue ( update1 ( SEMICOLON update )? )?
     ;
 
 /* SPARQL 1.1 [30] */
@@ -181,16 +182,16 @@ update1
     | move
     | copy
     | create
-    | insertdata
-    | deletedata
-    | deletewhere
+    | insertData
+    | deleteData
+    | deleteWhere
     | modify
     ;
 
 /* SPARQL 1.1 [31] */
   	//Load	  ::=  	'LOAD' 'SILENT'? iri ( 'INTO' GraphRef )?
 load
-    : LOAD SILENT? iri ( INTO graphref )?
+    : LOAD SILENT? iri ( INTO graphRef )?
     ;
 
 /* SPARQL 1.1 [32] */
@@ -208,7 +209,7 @@ drop
 /* SPARQL 1.1 [34] */
 //Create	  ::=  	'CREATE' 'SILENT'? GraphRef
 create
-    : CREATE SILENT? gaphRef
+    : CREATE SILENT? graphRef
     ;
 
 /* SPARQL 1.1 [35] */
@@ -314,7 +315,7 @@ quads
 /* SPARQL 1.1 [51] */
   	//QuadsNotTriples	  ::=  	'GRAPH' VarOrIri OPEN_CURLY_BRACE TriplesTemplate? CLOSE_CURLY_BRACE
 quadsNotTriples
-    : GRAPH varorIri OPEN_CURLY_BRACE triplesTemplate? CLOSE_CURLY_BRACE
+    : GRAPH varOrIri OPEN_CURLY_BRACE triplesTemplate? CLOSE_CURLY_BRACE
     ;
 
 /* SPARQL 1.1 [52] */
@@ -332,7 +333,7 @@ groupGraphPattern
 /* SPARQL 1.1 [54] */
  	//GroupGraphPatternSub	  ::=  	TriplesBlock? ( GraphPatternNotTriples '.'? TriplesBlock? )* SPARQL 1.1
 groupGraphPatternSub
- 	: triplesBlock? (graphPatternnotTriples DOT? triplesBlock? )*
+ 	: triplesBlock? (graphPatternNotTriples DOT? triplesBlock? )*
  	;
 
 /* SPARQL 1.1 [55] */
@@ -400,7 +401,7 @@ inlineDataOneVar
 /* SPARQL 1.1 [64] */
   	//InlineDataFull	  ::=  	( NIL | OPEN_BRACE Var* SPARQL 1.1 CLOSE_BRACE ) OPEN_CURLY_BRACE ( '(' DataBlockValue* ')' | NIL )* CLOSE_CURLY_BRACE
 inlineDataFull
-  	: ( NIL | OPEN_BRACE var* CLOSE_BRACE ) OPEN_CURLY_BRACE ( '(' dataBlockValue* ')' | NIL )* CLOSE_CURLY_BRACE
+  	: ( NIL | OPEN_BRACE var* CLOSE_BRACE ) OPEN_CURLY_BRACE ( OPEN_BRACE dataBlockValue* CLOSE_BRACE | NIL )* CLOSE_CURLY_BRACE
  	;
 
 /* SPARQL 1.1 [65] */
@@ -428,7 +429,7 @@ groupOrUnionGraphPattern
 /* SPARQL 1.1 [68] */
  	//Filter	  ::=  	'FILTER' Constraint
 filter
- 	: FILTER constriant
+ 	: FILTER constraint
  	;
 
 /* SPARQL 1.1 [69] */
@@ -512,7 +513,7 @@ object
 /* SPARQL 1.1 [81] */
  	//TriplesSameSubjectPath	  ::=  	VarOrTerm PropertyListPathNotEmpty |	TriplesNodePath PropertyListPath
 triplesSameSubjectPath
- 	: varOrTerm propertylistPathNotEmpty
+ 	: varOrTerm propertyListPathNotEmpty
  	| triplesNodePath propertyListPath
  	;
 
@@ -637,7 +638,7 @@ blankNodePropertyList
 /* SPARQL 1.1 [100] */
   	//TriplesNodePath	  ::=  	CollectionPath |	BlankNodePropertyListPath
 triplesNodePath
- 	: collecitonPath
+ 	: collectionPath
  	| blankNodePropertyListPath
  	;
 
@@ -699,7 +700,7 @@ var
 graphTerm
  	: iri
  	| rdfLiteral
- 	| numericlLiteral
+ 	| numericLiteral
  	| booleanLiteral
  	| blankNode
  	| NIL
@@ -855,58 +856,58 @@ brackettedExpression
 */
 builtInCall
  	: aggregate
-    | 'STR' OPEN_BRACE expression CLOSE_BRACE
-    | 'LANG' OPEN_BRACE expression CLOSE_BRACE
-    | 'LANGMATCHES' OPEN_BRACE expression ',' expression CLOSE_BRACE
-    | 'DATATYPE' OPEN_BRACE expression CLOSE_BRACE
-    | 'BOUND' OPEN_BRACE var CLOSE_BRACE
-    | 'IRI' OPEN_BRACE expression CLOSE_BRACE
-    | 'URI' OPEN_BRACE expression CLOSE_BRACE
-    | 'BNODE' ( OPEN_BRACE expression CLOSE_BRACE |  NIL )
-    | 'RAND' NIL
-    | 'ABS' OPEN_BRACE expression CLOSE_BRACE
-    | 'CEIL' OPEN_BRACE expression CLOSE_BRACE
-    | 'FLOOR' OPEN_BRACE expression CLOSE_BRACE
-    | 'ROUND' OPEN_BRACE expression CLOSE_BRACE
-    | 'CONCAT' expressionList
-    | substringexpression
-    | 'STRLEN' OPEN_BRACE expression CLOSE_BRACE
-    | strReplaceexpression
-    | 'UCASE' OPEN_BRACE expression CLOSE_BRACE
-    | 'LCASE' OPEN_BRACE expression CLOSE_BRACE
-    | 'ENCODE_FOR_URI' OPEN_BRACE expression CLOSE_BRACE
-    | 'CONTAINS' OPEN_BRACE expression ',' expression CLOSE_BRACE
-    | 'STRSTARTS' OPEN_BRACE expression ',' expression CLOSE_BRACE
-    | 'STRENDS' OPEN_BRACE expression ',' expression CLOSE_BRACE
-    | 'STRBEFORE' OPEN_BRACE expression ',' expression CLOSE_BRACE
-    | 'STRAFTER' OPEN_BRACE expression ',' expression CLOSE_BRACE
-    | 'YEAR' OPEN_BRACE expression CLOSE_BRACE
-    | 'MONTH' OPEN_BRACE expression CLOSE_BRACE
-    | 'DAY' OPEN_BRACE expression CLOSE_BRACE
-    | 'HOURS' OPEN_BRACE expression CLOSE_BRACE
-    | 'MINUTES' OPEN_BRACE expression CLOSE_BRACE
-    | 'SECONDS' OPEN_BRACE expression CLOSE_BRACE
-    | 'TIMEZONE' OPEN_BRACE expression CLOSE_BRACE
-    | 'TZ' OPEN_BRACE expression CLOSE_BRACE
-    | 'NOW' NIL
-    | 'UUID' NIL
-    | 'STRUUID' NIL
-    | 'MD5' OPEN_BRACE expression CLOSE_BRACE
-    | 'SHA1' OPEN_BRACE expression CLOSE_BRACE
-    | 'SHA256' OPEN_BRACE expression CLOSE_BRACE
-    | 'SHA384' OPEN_BRACE expression CLOSE_BRACE
-    | 'SHA512' OPEN_BRACE expression CLOSE_BRACE
-    | 'COALESCE' expressionList
-    | 'IF' OPEN_BRACE expression ',' expression ',' expression CLOSE_BRACE
-    | 'STRLANG' OPEN_BRACE expression ',' expression CLOSE_BRACE
-    | 'STRDT' OPEN_BRACE expression ',' expression CLOSE_BRACE
-    | 'sameTerm' OPEN_BRACE expression ',' expression CLOSE_BRACE
-    | 'isIRI' OPEN_BRACE expression CLOSE_BRACE
-    | 'isURI' OPEN_BRACE expression CLOSE_BRACE
-    | 'isBLANK' OPEN_BRACE expression CLOSE_BRACE
-    | 'isLITERAL' OPEN_BRACE expression CLOSE_BRACE
-    | 'isNUMERIC' OPEN_BRACE expression CLOSE_BRACE
-    | regexexpression
+    | STR OPEN_BRACE expression CLOSE_BRACE
+    | LANG OPEN_BRACE expression CLOSE_BRACE
+    | LANGMATCHES OPEN_BRACE expression COMMA expression CLOSE_BRACE
+    | DATATYPE OPEN_BRACE expression CLOSE_BRACE
+    | BOUND OPEN_BRACE var CLOSE_BRACE
+    | IRI OPEN_BRACE expression CLOSE_BRACE
+    | URI OPEN_BRACE expression CLOSE_BRACE
+    | BNODE ( OPEN_BRACE expression CLOSE_BRACE |  NIL )
+    | RAND NIL
+    | ABS OPEN_BRACE expression CLOSE_BRACE
+    | CEIL OPEN_BRACE expression CLOSE_BRACE
+    | FLOOR OPEN_BRACE expression CLOSE_BRACE
+    | ROUND OPEN_BRACE expression CLOSE_BRACE
+    | CONCAT expressionList
+    | substringExpression
+    | STRLEN OPEN_BRACE expression CLOSE_BRACE
+    | strReplaceExpression
+    | UCASE OPEN_BRACE expression CLOSE_BRACE
+    | LCASE OPEN_BRACE expression CLOSE_BRACE
+    | ENCODE_FOR_URI OPEN_BRACE expression CLOSE_BRACE
+    | CONTAINS OPEN_BRACE expression COMMA expression CLOSE_BRACE
+    | STRSTARTS OPEN_BRACE expression COMMA expression CLOSE_BRACE
+    | STRENDS OPEN_BRACE expression COMMA expression CLOSE_BRACE
+    | STRBEFORE OPEN_BRACE expression COMMA expression CLOSE_BRACE
+    | STRAFTER OPEN_BRACE expression COMMA expression CLOSE_BRACE
+    | YEAR OPEN_BRACE expression CLOSE_BRACE
+    | MONTH OPEN_BRACE expression CLOSE_BRACE
+    | DAY OPEN_BRACE expression CLOSE_BRACE
+    | HOURS OPEN_BRACE expression CLOSE_BRACE
+    | MINUTES OPEN_BRACE expression CLOSE_BRACE
+    | SECONDS OPEN_BRACE expression CLOSE_BRACE
+    | TIMEZONE OPEN_BRACE expression CLOSE_BRACE
+    | TZ OPEN_BRACE expression CLOSE_BRACE
+    | NOW NIL
+    | UUID NIL
+    | STRUUID NIL
+    | MD5 OPEN_BRACE expression CLOSE_BRACE
+    | SHA1 OPEN_BRACE expression CLOSE_BRACE
+    | SHA256 OPEN_BRACE expression CLOSE_BRACE
+    | SHA384 OPEN_BRACE expression CLOSE_BRACE
+    | SHA512 OPEN_BRACE expression CLOSE_BRACE
+    | COALESCE expressionList
+    | IF OPEN_BRACE expression COMMA expression COMMA expression CLOSE_BRACE
+    | STRLANG OPEN_BRACE expression COMMA expression CLOSE_BRACE
+    | STRDT OPEN_BRACE expression COMMA expression CLOSE_BRACE
+    | SAMETERM OPEN_BRACE expression COMMA expression CLOSE_BRACE
+    | ISIRI OPEN_BRACE expression CLOSE_BRACE
+    | ISURI OPEN_BRACE expression CLOSE_BRACE
+    | ISBLANK OPEN_BRACE expression CLOSE_BRACE
+    | ISLITERAL OPEN_BRACE expression CLOSE_BRACE
+    | ISNUMERIC OPEN_BRACE expression CLOSE_BRACE
+    | regexExpression
     | existsFunc
     | notExistsFunc
  	;
@@ -914,31 +915,31 @@ builtInCall
 /* SPARQL 1.1 [122] */
   	//RegexExpression	  ::=  	'REGEX' OPEN_BRACE Expression ',' Expression ( ',' Expression )? CLOSE_BRACE
 regexExpression
- 	: 'REGEX' OPEN_BRACE expression ',' expression ( ',' expression )? CLOSE_BRACE
+ 	: REGEX OPEN_BRACE expression COMMA expression ( COMMA expression )? CLOSE_BRACE
  	;
 
 /* SPARQL 1.1 [123] */
  	//SubstringExpression	  ::=  	'SUBSTR' OPEN_BRACE Expression ',' Expression ( ',' Expression )? CLOSE_BRACE
 substringExpression
- 	: 'SUBSTR' OPEN_BRACE expression ',' expression ( ',' expression )? CLOSE_BRACE
+ 	: SUBSTR OPEN_BRACE expression COMMA expression ( COMMA expression )? CLOSE_BRACE
  	;
 
 /* SPARQL 1.1 [124] */
   	//StrReplaceExpression	  ::=  	'REPLACE' OPEN_BRACE Expression ',' Expression ',' Expression ( ',' Expression )? CLOSE_BRACE
 strReplaceExpression
- 	: 'REPLACE' OPEN_BRACE expression ',' expression ',' expression ( ',' expression )? CLOSE_BRACE
+ 	: REPLACE OPEN_BRACE expression COMMA expression COMMA expression ( COMMA expression )? CLOSE_BRACE
  	;
 
 /* SPARQL 1.1 [125] */
   	//ExistsFunc	  ::=  	'EXISTS' GroupGraphPattern
 existsFunc
- 	: 'EXISTS' groupGraphPattern
+ 	: EXISTS groupGraphPattern
  	;
 
 /* SPARQL 1.1 [126] */
   	//NotExistsFunc	  ::=  	'NOT' 'EXISTS' GroupGraphPattern
 notExistsFunc
- 	: 'NOT' 'EXISTS' groupGraphPattern
+ 	: NOT EXISTS groupGraphPattern
  	;
 
 /* SPARQL 1.1 [127] */
@@ -1042,4 +1043,3 @@ blankNode
  	| ANON
  	;
 
-*/
