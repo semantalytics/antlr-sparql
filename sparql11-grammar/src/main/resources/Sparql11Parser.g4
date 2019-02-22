@@ -19,7 +19,7 @@ updateUnit
 /* SPARQL 1.1 [4] */
 /* SPARQL 1.0 [2] */
 prologue
-    : ( baseDecl | prefixDecl)*
+    : ( baseDecl | prefixDecl )*
     ;
 
 /* SPARQL 1.1 [5] */

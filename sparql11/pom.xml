@@ -77,13 +77,13 @@
                             <overwrite>true</overwrite>
                             <resources>
                                 <resource>
-                                    <directory>${project.build.directory}/maven-shared-archive-resources/</directory>
+                                    <directory>${project.build.directory}/maven-shared-archive-resources</directory>
                                     <includes>
                                         <include>Sparql11Lexer.g4</include>
                                     </includes>
                                 </resource>
                                 <resource>
-                                    <directory>${project.build.directory}/maven-shared-archive-resources/</directory>
+                                    <directory>${project.build.directory}/maven-shared-archive-resources</directory>
                                     <includes>
                                         <include>Sparql11Parser.g4</include>
                                     </includes>
@@ -102,11 +102,11 @@
                             <overwrite>true</overwrite>
                             <resources>
                                 <resource>
-                                    <directory>${project.build.directory}/maven-shared-archive-resources/</directory>
+                                    <directory>${project.build.directory}/maven-shared-archive-resources</directory>
                                     <include>Sparql10Lexer.g4</include>
                                 </resource>
                                 <resource>
-                                    <directory>${project.build.directory}/maven-shared-archive-resources/</directory>
+                                    <directory>${project.build.directory}/maven-shared-archive-resources</directory>
                                     <include>Sparql10Parser.g4</include>
                                 </resource>
                             </resources>
