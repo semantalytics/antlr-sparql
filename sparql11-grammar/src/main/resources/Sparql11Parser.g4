@@ -1,6 +1,8 @@
-grammar Sparql11Parser;
+parser grammar Sparql11Parser;
 
-import Sparql10Parser;
+/*import Sparql10Parser;*/
+
+options { tokenVocab=Sparql11Lexer; }
 
 /* SPARQL 1.1 [1] */
 queryUnit
@@ -9,7 +11,10 @@ queryUnit
 
 /* SPARQL 1.1 [2] */
 /* SPARQL 1.0 [1] */
-// query
+//  	Query	  ::=  	Prologue ( SelectQuery | ConstructQuery | DescribeQuery | AskQuery ) ValuesClause
+query
+    : prologue ( selectQuery | constructQuery | describeQuery | askQuery ) valuesClause
+    ;
 
 /* SPARQL 1.1 [3] */
 updateUnit
@@ -25,10 +30,16 @@ prologue
 /* SPARQL 1.1 [5] */
 /* SPARQL 1.0 [3] */
 // baseDecl
+baseDecl
+    : BASE IRI_REF
+    ;
 
 /* SPARQL 1.1 [6] */
 /* SPARQL 1.0 [4] */
 // prefixDecl
+prefixDecl
+    : PREFIX PNAME_NS IRI_REF
+    ;
 
 /* SPARQL 1.1 [7] */
 selectQuery
@@ -43,7 +54,7 @@ subSelect
 /* SPARQL 1.1 [9] */
   	// SelectClause	  ::=  	'SELECT' ( 'DISTINCT' | 'REDUCED' )? ( ( Var | ( OPEN_BRACE Expression 'AS' Var CLOSE_BRACE ) )+ | '*' )
 selectClause
-    : SELECT ( DISTINCT | REDUCED )? ( (var | ( OPEN_BRACE expression AS var CLOSE_BRACE ) )+ | STAR )
+    : SELECT ( DISTINCT | REDUCED )? ( (var | ( OPEN_BRACE expression AS var CLOSE_BRACE ) )+ | ASTERISK )
     ;
 
 /* SPARQL 1.1 [10] */
@@ -54,7 +65,7 @@ constructQuery
 
 /* SPARQL 1.1 [11] */
   	//DescribeQuery	  ::=  	'DESCRIBE' ( VarOrIri+ | '*' ) DatasetClause* WhereClause? SolutionModifier
-describequery
+describeQuery
     : DESCRIBE ( varOrIri+ | ASTERISK ) datasetClause* whereClause? solutionModifier
     ;
 
@@ -162,7 +173,7 @@ offsetClause
 
 /* SPARQL 1.1 [28] */
   	//ValuesClause	  ::=  	( 'VALUES' DataBlock )?
-values
+valuesClause
     : ( VALUES dataBlock )?
     ;
 
@@ -221,7 +232,7 @@ add
 /* SPARQL 1.1 [36] */
 // Move	  ::=  	'MOVE' 'SILENT'? GraphOrDefault 'TO' GraphOrDefault
 move
-    : MOVE SILIENT? graphOrDefault TO graphOrDefault
+    : MOVE SILENT? graphOrDefault TO graphOrDefault
     ;
 
 /* SPARQL 1.1 [37] */
@@ -370,7 +381,7 @@ graphGraphPattern
 /* SPARQL 1.1 [59] */
   	//ServiceGraphPattern	  ::=  	'SERVICE' 'SILENT'? VarOrIri GroupGraphPattern
 serviceGraphPattern
- 	: SERVICE SILIENT? varOrIri groupGraphPattern
+ 	: SERVICE SILENT? varOrIri groupGraphPattern
  	;
 
 /* SPARQL 1.1 [60] */
@@ -562,7 +573,7 @@ path
 /* SPARQL 1.1 [89] */
   	//PathAlternative	  ::=  	PathSequence ( '|' PathSequence )* SPARQL 1.1
 pathAlternative
- 	: pathSequence ( '|' pathSequence )*
+ 	: pathSequence ( PIPE pathSequence )*
  	;
 
 /* SPARQL 1.1 [90] */
@@ -959,7 +970,7 @@ aggregate
     | MAX          OPEN_BRACE DISTINCT? expression CLOSE_BRACE
     | AVG          OPEN_BRACE DISTINCT? expression CLOSE_BRACE
     | SAMPLE       OPEN_BRACE DISTINCT? expression CLOSE_BRACE
-    | GROUP_CONCAT OPEN_BRACE DISTINCT? expression ( SEMICOLON SEPARATOR EQUALS string )? CLOSE_BRACE
+    | GROUP_CONCAT OPEN_BRACE DISTINCT? expression ( SEMICOLON SEPARATOR EQUAL string )? CLOSE_BRACE
  	;
 
 /* SPARQL 1.1 [128] */

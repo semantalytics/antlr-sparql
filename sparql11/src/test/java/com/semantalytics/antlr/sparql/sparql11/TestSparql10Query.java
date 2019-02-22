@@ -1,8 +1,6 @@
-package com.semantaltyics.antlr.sparql.sparql10;
+package com.semantalytics.antlr.sparql.sparql11;
 
 import com.google.common.io.Resources;
-import com.semantalytics.antlr.sparql.sparql10.Sparql10Lexer;
-import com.semantalytics.antlr.sparql.sparql10.Sparql10Parser;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -20,14 +18,14 @@ import java.util.Collection;
 import java.util.stream.Collectors;
 
 import static junit.framework.TestCase.assertTrue;
-import static org.junit.runners.Parameterized.*;
+import static org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
-public class TestQuery {
+public class TestSparql10Query {
 
     private final String fileName;
 
-    public TestQuery(final String fileName) {
+    public TestSparql10Query(final String fileName) {
         this.fileName = fileName;
     }
 
@@ -47,12 +45,10 @@ public class TestQuery {
     @Test
     public void CanParse() throws IOException {
         System.out.println("Attempting to parse " + fileName);
-        System.out.println("");
-        Files.copy(Paths.get("./src/test/resources/sparql-10-dawg/" + fileName), System.out);
         CharStream input = CharStreams.fromStream(new FileInputStream("./src/test/resources/sparql-10-dawg/" +fileName));
-        Sparql10Lexer lexer = new Sparql10Lexer(input);
+        Sparql11Lexer lexer = new Sparql11Lexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
-        Sparql10Parser parser = new Sparql10Parser(tokens);
+        Sparql11Parser parser = new Sparql11Parser(tokens);
         ParseTree tree = parser.query(); // begin parsing at query rule
         System.out.println(tree.toStringTree(parser)); // print LISP-style tree
         assertTrue(parser.getNumberOfSyntaxErrors() == 0);

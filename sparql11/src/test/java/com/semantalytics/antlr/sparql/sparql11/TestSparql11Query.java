@@ -21,17 +21,17 @@ import static junit.framework.TestCase.assertTrue;
 import static org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
-public class TestQuery {
+public class TestSparql11Query {
 
     private final String fileName;
 
-    public TestQuery(final String fileName) {
+    public TestSparql11Query(final String fileName) {
         this.fileName = fileName;
     }
 
     @Parameters
     public static Collection<Object[]> data() throws IOException {
-        String fixturesRoot = Resources.getResource("sparql-10-dawg").getPath();
+        String fixturesRoot = Resources.getResource("sparql11").getPath();
         final Path fixturesRootPath = Paths.get(fixturesRoot);
 
             return Files.walk(fixturesRootPath)
@@ -45,7 +45,9 @@ public class TestQuery {
     @Test
     public void CanParse() throws IOException {
         System.out.println("Attempting to parse " + fileName);
-        CharStream input = CharStreams.fromStream(new FileInputStream("./src/test/resources/sparql-10-dawg/" +fileName));
+        System.out.println("");
+        Files.copy(Paths.get("./src/test/resources/sparql11/" + fileName), System.out);
+        CharStream input = CharStreams.fromStream(new FileInputStream("./src/test/resources/sparql11/" +fileName));
         Sparql11Lexer lexer = new Sparql11Lexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         Sparql11Parser parser = new Sparql11Parser(tokens);

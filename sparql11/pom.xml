@@ -2,47 +2,38 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.semantalytics.antlr4</groupId>
     <artifactId>sparql11</artifactId>
     <name>Antlr4 SPARQL 1.1</name>
-
     <parent>
         <groupId>com.semantalytics.antlr4</groupId>
         <artifactId>sparql</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
-
     <packaging>jar</packaging>
     <version>1.0.0-SNAPSHOT</version>
     <url>http://semantalytics.com</url>
     <inceptionYear>2019</inceptionYear>
-
     <organization>
         <name>Semantalytics</name>
         <url>http://www.semantalytics.com/</url>
     </organization>
-
     <developers>
         <developer>
             <name>Zachary Whitley</name>
         </developer>
     </developers>
-
     <issueManagement>
         <system>github</system>
         <url>http://github.com/semantaltytics/antlr-sparql</url>
     </issueManagement>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <antlr.version>4.7</antlr.version>
+        <maven.resources.overwrite>true</maven.resources.overwrite>
     </properties>
-
     <build>
-
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -107,6 +98,10 @@
                                 </resource>
                                 <resource>
                                     <directory>${project.build.directory}/maven-shared-archive-resources</directory>
+                                    <include>Sparql10Lexer.tokens</include>
+                                </resource>
+                                <resource>
+                                    <directory>${project.build.directory}/maven-shared-archive-resources</directory>
                                     <include>Sparql10Parser.g4</include>
                                 </resource>
                             </resources>
@@ -114,7 +109,6 @@
                     </execution>
                 </executions>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-remote-resources-plugin</artifactId>
@@ -132,12 +126,10 @@
                     </execution>
                 </executions>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -147,7 +139,6 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -155,7 +146,6 @@
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
@@ -168,7 +158,6 @@
                     </execution>
                 </executions>
             </plugin>
-
             <plugin>
                 <groupId>org.antlr</groupId>
                 <artifactId>antlr4-maven-plugin</artifactId>
@@ -182,12 +171,8 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
-
-
     </build>
-
     <dependencies>
         <dependency>
             <groupId>org.antlr</groupId>
