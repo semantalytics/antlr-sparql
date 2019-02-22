@@ -48,7 +48,7 @@ selectClause :
 /* SPARQL 1.1 [10] */
  	//ConstructQuery	  ::=  	'CONSTRUCT' ( ConstructTemplate DatasetClause* WhereClause SolutionModifier | DatasetClause* 'WHERE' OPEN_CURLY_BRACE TriplesTemplate? CLOSE_CURLY_BRACE SolutionModifier )
 constructQuery
- 	: 'CONSTRUCT' ( constructTemplate datasetClause* whereClause solutionModifier | datasetClause* 'WHERE' OPEN_CURLY_BRACE triplesTemplate? CLOSE_CURLY_BRACE solutionModifier )
+    : CONSTRUCT ( constructTemplate datasetClause* whereClause solutionModifier | datasetClause* WHERE OPEN_CURLY_BRACE triplesTemplate? CLOSE_CURLY_BRACE solutionModifier )
     ;
 
 /* SPARQL 1.1 [11] */
