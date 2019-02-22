@@ -217,7 +217,7 @@
         </dependency>
         <dependency>
             <groupId>com.semantalytics.antlr4</groupId>
-            <artifactId>sparql10-grammar</artifactId>
+            <artifactId>sparql11-grammar</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
