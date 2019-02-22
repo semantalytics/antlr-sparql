@@ -98,10 +98,11 @@
                         </goals>
                         <configuration>
                             <outputDirectory>${project.basedir}/src/main/antlr4/imports</outputDirectory>
+                            <overwrite>true</overwrite>
                             <resources>
                                 <resource>
                                     <directory>${project.build.directory}/maven-shared-archive-resources/</directory>
-                                    <includes>Sparql10Lexer.g4</includes>
+                                    <include>Sparql10Lexer.g4</include>
                                 </resource>
                                 <resource>
                                     <directory>${project.build.directory}/maven-shared-archive-resources/</directory>
