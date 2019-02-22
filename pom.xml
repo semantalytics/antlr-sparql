@@ -3,8 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.semantalytics.antlr4</groupId>
-    <artifactId>sparql</artifactId>
+    <groupId>com.semantalytics.antlr</groupId>
+    <artifactId>sparql11-update-grammar</artifactId>
     <name>Antlr4 SPARQL parent</name>
     <dependencies>
         <dependency>
@@ -21,10 +21,12 @@
         <url>http://www.semantalytics.com/</url>
     </organization>
     <modules>
-        <module>sparql10</module>
         <module>sparql10-grammar</module>
-        <module>sparql11</module>
-        <module>sparql11-grammar</module>
+        <module>sparql10-parser</module>
+        <module>sparql11-core-grammar</module>
+        <module>sparql11-query-grammar</module>
+        <module>sparql11-update-grammar</module>
+        <module>sparql11-parser</module>
     </modules>
     <developers>
         <developer>
