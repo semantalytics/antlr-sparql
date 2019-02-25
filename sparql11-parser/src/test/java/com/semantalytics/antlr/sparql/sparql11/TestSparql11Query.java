@@ -51,7 +51,7 @@ public class TestSparql11Query {
         Sparql11Lexer lexer = new Sparql11Lexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         Sparql11Parser parser = new Sparql11Parser(tokens);
-        ParseTree tree = parser.query(); // begin parsing at query rule
+        ParseTree tree = parser.queryUnit(); // begin parsing at query rule
         System.out.println(tree.toStringTree(parser)); // print LISP-style tree
         assertTrue(parser.getNumberOfSyntaxErrors() == 0);
     }
