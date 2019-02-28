@@ -31,6 +31,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <antlr.version>4.7</antlr.version>
         <maven.resources.overwrite>true</maven.resources.overwrite>
+        <jena.version>3.8.0</jena.version>
     </properties>
     <build>
         <plugins>
