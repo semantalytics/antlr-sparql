@@ -133,6 +133,7 @@ REGEX
 REDUCED
     : ('R'|'r')('E'|'e')('D'|'d')('U'|'u')('C'|'c')('E'|'e')('D'|'d')
     ;
+
 A
     : ('a')
     ;
@@ -188,137 +189,137 @@ EOL2
     : '\r'
     ;
 
-/* SPARQL 1.0 [70] */
+/* [70] */
 IRI_REF
     : '<' ( ~( '<' | '>' | '"' | '{' | '}' | '|' | '^' | '\\' | '`' | '\u0000'..'\u0020') )*? '>'
     ;
 
-/* SPARQL 1.0 [71] */
+/* [71] */
 PNAME_NS
     : PN_PREFIX? ':'
     ;
 
-/* SPARQL 1.0 [72] */
+/* [72] */
 PNAME_LN
     : PNAME_NS PN_LOCAL
     ;
 
-/* SPARQL 1.0 [73] */
+/* [73] */
 BLANK_NODE_LABEL
     : '_:' PN_LOCAL
     ;
 
-/* SPARQL 1.0 [74] */
+/* [74] */
 VAR1
     : '?' VARNAME
     ;
 
-/* SPARQL 1.0 [75] */
+/* [75] */
 VAR2
     : '$' VARNAME
     ;
 
-/* SPARQL 1.0 [76] */
+/* [76] */
 LANGTAG
     : '@' (('a'..'z' | 'A'..'Z'))+ ('-' (('a'..'z' | 'A'..'Z')('0'..'9'))+)*?
     ;
 
-/* SPARQL 1.0 [77] */
+/* [77] */
 INTEGER
     : (DIGIT)+
     ;
 
-/* SPARQL 1.0 [78] */
+/* [78] */
 DECIMAL
     : (DIGIT)+ DOT (DIGIT)*
     | DOT (DIGIT)+
     ;
 
-/* SPARQL 1.0 [79] */
+/* [79] */
 DOUBLE
     : DIGIT+ DOT DIGIT* EXPONENT
     | DOT DIGIT+ EXPONENT
     | DIGIT+ EXPONENT
     ;
 
-/* SPARQL 1.0 [80] */
+/* [80] */
 INTEGER_POSITIVE
     : '+' INTEGER
     ;
 
 
-/* SPARQL 1.0 [81] */
+/* [81] */
 DECIMAL_POSITIVE
     : '+' DECIMAL
     ;
 
-/* SPARQL 1.0 [82] */
+/* [82] */
 DOUBLE_POSITIVE
     : '+' DOUBLE
     ;
 
-/* SPARQL 1.0 [83] */
+/* [83] */
 INTEGER_NEGATIVE
     : '-' INTEGER
     ;
 
-/* SPARQL 1.0 [84] */
+/* [84] */
 DECIMAL_NEGATIVE
     : '-' DECIMAL
     ;
 
-/* SPARQL 1.0 [85] */
+/* [85] */
 DOUBLE_NEGATIVE
     : '-' DOUBLE
     ;
 
-/* SPARQL 1.0 [86] */
+/* [86] */
 EXPONENT
     : ('e' | 'E') ('+' | '-')? ('0'..'9')+
     ;
 
-/* SPARQL 1.0 [87] */
+/* [87] */
 STRING_LITERAL1
     : '\'' ( ~('\u0027' | '\u005C' | '\u000A' | '\u000D') | ECHAR )*? '\''
     ;
 
-/* SPARQL 1.0 [88] */
+/* [88] */
 STRING_LITERAL2
     : '"'  ( ~('\u0022' | '\u005C' | '\u000A' | '\u000D') | ECHAR )*? '"'
     ;
 
-/* SPARQL 1.0 [89] */
+/* [89] */
 STRING_LITERAL_LONG1
     :   '\'\'\'' ( ( '\'' | '\'\'' )? ( ~( '\'' | '\\' ) | ECHAR ) )*? '\'\'\''
     ;
 
-/* SPARQL 1.0 [90] */
+/* [90] */
 STRING_LITERAL_LONG2
     : '"""' ( ( '"' | '""' )? ( ~( '"' | '\\' ) | ECHAR ) )*? '"""'
     ;
 
-/* SPARQL 1.0 [91] */
+/* [91] */
 ECHAR
     : '\\' ('t' | 'b' | 'n' | 'r' | 'f' | '\\' | '"' | '\'')
     ;
 
-/* SPARQL 1.0 [92] */
+/* [92] */
 NIL
     : '(' WS*? ')'
     ;
 
-/* SPARQL 1.0 [93] */
+/* [93] */
 WS
     : (' ' | TAB | EOL) -> channel(HIDDEN)
     ;
 
 
-/* SPARQL 1.0 [94] */
+/* [94] */
 ANON
     : '[' WS*? ']'
     ;
 
-/* SPARQL 1.0 [95] */
+/* [95] */
 PN_CHARS_BASE
     : 'A'..'Z'
     | 'a'..'z'
@@ -335,17 +336,17 @@ PN_CHARS_BASE
     | '\uFDF0'..'\uFFFD'
     ;
 
-/* SPARQL 1.0 [96] */
+/* [96] */
 PN_CHARS_U
     : PN_CHARS_BASE | '_'
     ;
 
-/* SPARQL 1.0 [97] */
+/* [97] */
 VARNAME
     : ( PN_CHARS_U | ('0'..'9') ) ( PN_CHARS_U | ('0'..'9') | '\u00B7' | '\u0300'..'\u036F' | '\u203F'..'\u2040' )*
     ;
 
-/* SPARQL 1.0 [98] */
+/* [98] */
 PN_CHARS
     : PN_CHARS_U
     | '-'
@@ -355,12 +356,12 @@ PN_CHARS
     | '\u203F'..'\u2040'
     ;
 
-/* SPARQL 1.0 [99] */
+/* [99] */
 PN_PREFIX
     : PN_CHARS_BASE ((PN_CHARS|DOT)* PN_CHARS)?
     ;
 
-/* SPARQL 1.0 [100] */
+/* [100] */
 PN_LOCAL
     : ( PN_CHARS_U | ('0'..'9') ) (( PN_CHARS | DOT)* PN_CHARS)?
     ;
